@@ -5,14 +5,14 @@ def generate_qr(link, filename):
     qr = qrcode.QRCode(
         version=1,
         error_correction=qrcode.constants.ERROR_CORRECT_H,
-        box_size=10,
-        border=4,
+        box_size=100,
+        border=3,
     )
 
     qr.add_data(link)
     qr.make(fit=True)
 
-    img = qr.make_image(fill_color="darkblue", back_color="white")
+    img = qr.make_image(fill_color="#eb455f", back_color="white")
 
     img.save(filename)
     print(f"Success! Saved as {filename}")
